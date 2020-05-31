@@ -1,8 +1,9 @@
 version: "3"
-
 services:
-  nginx:
-    image: nginx:latest
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
     ports:
       - 80:80
       - 443:443
@@ -24,19 +25,3 @@ services:
       - FLASK_ENV=development
       - FLASK_APP=app.py
       - FLASK_DEBUG=1
-
-  frontend:
-    container_name: frontend
-    build:
-      context: ./frontend
-      args:
-        REACT_APP_API_BASE_URL: https://demo.ahmedbesbes.com/api
-    expose:
-      - 3000
-    ports:
-      - 3000:3000
-    volumes:
-      - ./frontend/src:/usr/src/app/src
-      - ./frontend/public:/usr/src/app/public
-    depends_on:
-      - backend
