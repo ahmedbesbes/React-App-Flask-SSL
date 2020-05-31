@@ -16,8 +16,8 @@ services:
     build: ./backend
     expose:
       - 5000
-    ports:
-      - 5000:5000
+    # ports:
+    # - 5000:5000
     volumes:
       - ./backend:/usr/src/app
     environment:
@@ -40,5 +40,3 @@ services:
       - ./frontend/public:/usr/src/app/public
     depends_on:
       - backend
-    # links:
-    #   - "backend:backend"
