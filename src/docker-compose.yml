@@ -28,8 +28,8 @@ services:
   frontend:
     container_name: frontend
     build:
-      - context: ./frontend
-      - args:
+      context: ./frontend
+      args:
         REACT_APP_API_BASE_URL: http://demo.ahmedbesbes.com/api
     expose:
       - 3000
