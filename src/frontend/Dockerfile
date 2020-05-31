@@ -9,4 +9,4 @@ RUN npm install
 RUN npm install react-scripts@1.1.1
 
 ENTRYPOINT [ "npm" ]
-CMD ["start", "--port=3000"]
+CMD ["start", "--port=5000"]

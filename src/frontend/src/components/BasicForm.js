@@ -46,7 +46,7 @@ export default function BasicForm() {
 
     axios({
       method: "post",
-      url: url + "/submit",
+      url: "/submit",
       data: data,
     })
       .then(function (response) {
