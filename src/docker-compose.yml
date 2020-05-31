@@ -27,7 +27,10 @@ services:
 
   frontend:
     container_name: frontend
-    build: ./frontend
+    build:
+      - context: ./frontend
+      - args:
+        REACT_APP_API_BASE_URL: http://demo.ahmedbesbes.com/api
     expose:
       - 3000
     ports:
@@ -36,6 +39,5 @@ services:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
     args:
-      REACT_APP_API_BASE_URL: http://demo.ahmedbesbes.com/api
     # links:
     #   - "backend:backend"
