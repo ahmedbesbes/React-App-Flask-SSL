@@ -30,7 +30,7 @@ services:
     build:
       context: ./frontend
       args:
-        REACT_APP_API_BASE_URL: http://demo.ahmedbesbes.com/api
+        REACT_APP_API_BASE_URL: https://demo.ahmedbesbes.com/api
     expose:
       - 3000
     ports:
