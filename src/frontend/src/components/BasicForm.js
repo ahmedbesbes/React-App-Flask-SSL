@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function BasicForm() {
-  const baseUrl = process.env.REACT_APP_API_URL;
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
   const classes = useStyles();
   const [identity, setIdentity] = useState({ firstName: "", lastName: "" });
   const [job, setJob] = useState("");
