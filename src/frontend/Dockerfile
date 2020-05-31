@@ -5,6 +5,7 @@ ENV PATH  /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/
 RUN npm install
 RUN npm install react-scripts@1.1.1
+COPY . ./
 RUN npm run build   
 
 FROM nginx:stable-alpine
