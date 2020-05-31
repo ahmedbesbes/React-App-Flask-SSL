@@ -2,6 +2,8 @@ version: "3"
 services:
   frontend:
     container_name: frontend
+    stdin_open: true
+    tty: true
     build:
       context: ./frontend
     ports:
@@ -25,6 +27,3 @@ services:
       - FLASK_ENV=development
       - FLASK_APP=app.py
       - FLASK_DEBUG=1
-
-stdin_open: true
-tty: true
