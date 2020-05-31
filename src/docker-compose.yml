@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  backend:
+    restart: always
+    container_name: backend
+    build: ./backend
+    ports:
+      - 5050:5050
+    volumes:
+      - ./backend:/usr/src/app
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+      - FLASK_DEBUG=1
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - 3001:3000
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+    links:
+      - "backend:backend"
