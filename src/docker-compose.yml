@@ -17,7 +17,7 @@ services:
     expose:
       - 5000
     ports:
-      - 5050:5000
+      - 5000:5000
     volumes:
       - ./backend:/usr/src/app
     environment:
@@ -32,11 +32,13 @@ services:
       args:
         REACT_APP_API_BASE_URL: http://demo.ahmedbesbes.com/api
     expose:
-      - 5000
+      - 3000
     ports:
-      - 5000:5000
+      - 3000:3000
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
+    depends_on:
+      - backend
     # links:
     #   - "backend:backend"
