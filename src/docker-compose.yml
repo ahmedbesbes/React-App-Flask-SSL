@@ -26,8 +26,8 @@ services:
   frontend:
     container_name: frontend
     build: ./frontend
-    ports:
-      - 3000:3000
+    expose:
+      - 3000
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
