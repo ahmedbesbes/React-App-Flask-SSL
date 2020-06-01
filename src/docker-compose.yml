@@ -15,8 +15,6 @@ services:
     build: ./backend
     expose:
       - 5000
-    ports:
-      - 5000:5000
     volumes:
       - ./backend:/usr/src/app
     environment:
@@ -28,12 +26,8 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      args:
-        REACT_APP_API_BASE_URL: https://demo.ahmedbesbes.com/api
     expose:
       - 3000
-    ports:
-      - 3000:3000
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
