@@ -4,11 +4,11 @@
     <img src="./images/docker-secure.png" width="80%">
 </p>
 
-This is the code for this <a href="">article</a>.
+Learn more about this project via this <a href="">article</a>.
 
 ### Description
 
-This is a boilerplate code I played with to learn about Docker and deployment.
+This is a boilerplate code I played with to learn about Docker, deployment and SSL encryption.
 
 It covers:
 
