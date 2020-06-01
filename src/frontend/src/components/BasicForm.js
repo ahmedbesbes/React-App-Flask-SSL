@@ -17,10 +17,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BasicForm() {
   const baseUrl = process.env.REACT_APP_API_BASE_URL;
-  console.log(baseUrl);
-  // const url = "https://demo.ahmedbesbes.com:5000/api";
-  // const url = "http://localhost:5000/api";
 
+  const url = baseUrl ? baseUrl + "/submit" : "api/submit";
   const classes = useStyles();
   const [identity, setIdentity] = useState({ firstName: "", lastName: "" });
   const [job, setJob] = useState("");
@@ -47,7 +45,7 @@ export default function BasicForm() {
 
     axios({
       method: "post",
-      url: "api/submit",
+      url: url,
       data: data,
     })
       .then(function (response) {
@@ -72,7 +70,7 @@ export default function BasicForm() {
 
   return (
     <Container>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Grid container justify="center">
           <Grid item xs={12} sm={12} md={6} lg={6} className={classes.input}>
             <TextField
@@ -88,6 +86,7 @@ export default function BasicForm() {
 
           <Grid item xs={12} sm={12} md={6} lg={6} className={classes.input}>
             <TextField
+              required
               name="lastname"
               id="lastname"
               label="Last name"
@@ -99,6 +98,7 @@ export default function BasicForm() {
 
           <Grid item xs={12} sm={12} md={6} lg={6} className={classes.input}>
             <TextField
+              required
               name="job"
               id="firstname"
               label="Job"
@@ -110,11 +110,7 @@ export default function BasicForm() {
 
           <Grid item xs={12} sm={12} md={6} lg={6}>
             <Typography align="center">
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={handleSubmit}
-              >
+              <Button type="submit" color="primary" variant="contained">
                 Submit
               </Button>
               <div style={{ marginTop: 10 }}>
