@@ -2,7 +2,11 @@ version: "3"
 services:
   nginx:
     container_name: nginx
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE_URL: https://demo.ahmedbesbes.com/api
     ports:
       - 80:80
       - 443:443
