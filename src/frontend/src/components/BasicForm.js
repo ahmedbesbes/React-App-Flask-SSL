@@ -16,9 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function BasicForm() {
-  const baseUrl = process.env.REACT_APP_API_BASE_URL;
-
-  const url = baseUrl ? baseUrl + "/submit" : "api/submit";
+  const url = "api/submit";
   const classes = useStyles();
   const [identity, setIdentity] = useState({ firstName: "", lastName: "" });
   const [job, setJob] = useState("");
