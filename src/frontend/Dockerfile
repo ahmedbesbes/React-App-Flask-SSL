@@ -4,7 +4,6 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 
 RUN npm install
-RUN npm install react-scripts@1.1.1
 
 COPY . /usr/src/app
 RUN npm run build

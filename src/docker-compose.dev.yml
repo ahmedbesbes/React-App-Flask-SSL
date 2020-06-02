@@ -1,11 +1,12 @@
 version: "3"
 services:
   nginx:
-    image: nginx:latest
+    container_name: nginx
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
     ports:
       - 9090:80
-    volumes:
-      - ./nginx.dev.conf:/etc/nginx/nginx.conf
 
   backend:
     container_name: backend
@@ -20,18 +21,3 @@ services:
       - FLASK_ENV=development
       - FLASK_APP=app.py
       - FLASK_DEBUG=1
-
-  frontend:
-    container_name: frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.dev
-      args:
-        REACT_APP_API_BASE_URL: http://localhost:5000/api
-    expose:
-      - 3000
-    volumes:
-      - ./frontend/src:/usr/src/app/src
-      - ./frontend/public:/usr/src/app/public
-    depends_on:
-      - backend
