@@ -8,8 +8,6 @@ services:
       - 443:443
     volumes:
       - /home/ubuntu/ssl:/etc/nginx/certs
-      - ./frontend/src:/usr/src/app/src
-      - ./frontend/public:/usr/src/app/public
 
   backend:
     restart: always
