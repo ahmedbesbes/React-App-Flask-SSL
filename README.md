@@ -15,6 +15,10 @@ It covers:
 - Building a simple React front-end using the Material-UI library
 - Designing a Flask API that receives data from the front-end
 - Setting up a domain name and an SSL certificate with Nginx
+- Configuring an AWS instance with a static IP and a domain name
+- Deployment using docker-compose
+
+The goal is to learn how these components interact with each other.
 
 ### Screenshot of the app
 
